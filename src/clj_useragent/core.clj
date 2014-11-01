@@ -1,6 +1,5 @@
 (ns clj-useragent.core
   (:require [clojure.string :as str]
-            [cheshire.core :as json]
             [net.cgrand.enlive-html :as html]))
 
 (def ^:dynamic *base-url* "http://www.useragentstring.com")
