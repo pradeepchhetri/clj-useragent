@@ -30,3 +30,20 @@
   "Extracts all uris."
   [url]
   (map get-href (html/select (fetch-url url) [(html/attr= :class "unterMenuName")])))
+
+(defn get-user-agent-url
+  "Returns the URL for a user-agent."
+  [user-agent]
+  (let [index (.indexOf (extract-uas *all-uas*) user-agent)
+        user-agent-url (str *base-url* (nth (extract-uri *all-uas*) index))]
+    user-agent-url))
+
+(defn extract-versions
+  "Extract all versions of a particular user-agent."
+  [user-agent]
+    (map get-content (html/select (fetch-url (get-user-agent-url user-agent)) [:body :h4])))
+
+(defn extract-uas-strings
+  "Extract all string of user-agent."
+  [user-agent]
+    (map get-content (html/select (fetch-url (get-user-agent-url user-agent)) [:body :ul :li :a])))
