@@ -5,7 +5,7 @@ A Clojure library designed to get list of user-agents over APIs.
 ## API Endpoints
 
 | Endpoint                                 | Response                                                    |
-| -----------------------------------------|:-----------------------------------------------------------:|
+| -----------------------------------------|-------------------------------------------------------------|
 | /user-agent                              | List of available user-agents                               |
 | /version/#{user-agent}                   | List all the versions of a particular useragent.            |
 | /version/#{user-agent}/latest            | List the latest version of a particular useragent.          |
